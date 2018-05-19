@@ -32,7 +32,6 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 eval "$(pyenv virtualenv-init -)"
 
 export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
 
 # rust ようにpathを通す
 export PATH=$PATH:/Users/y-nozaki/.cargo/bin
