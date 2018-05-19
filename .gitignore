@@ -1,0 +1,5 @@
+.vim/bundle/*
+!.vim/bundle/neobundle.vim
+.vim/plugged/*
+.vim/bundle/.neobundle/*
+.golang/*

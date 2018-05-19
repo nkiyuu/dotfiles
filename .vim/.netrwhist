@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/private/tmp/shinolab/.git'
+let g:netrw_dirhist_2='/home/kiyuu/dotfiles/.vim/bundle/lightline.vim'
+let g:netrw_dirhist_3='/Users/nozakiyuuki/lab/research/create_automaton'
+let g:netrw_dirhist_4='/home/kiyuu/.zprezto'
