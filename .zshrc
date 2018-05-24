@@ -72,8 +72,10 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^R' peco-select-history
 
+# alias書いていくよ
+# clでターミナルクリア
+alias cl='clear'
 # gコマンドでpecoを使ってローカルリポジトリに移動
 alias g='cd $(ghq root)/$(ghq list | peco)'
-
 # hgコマンドでリモートリポジトリに移動
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'

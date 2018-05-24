@@ -1,5 +1,5 @@
 [ghq]
-	root = \"$HOME\"/go/src
+	root = ~/go/src
 [user]
 	name = Yuki Nozaki
 	email = nq127main@gmail.com
