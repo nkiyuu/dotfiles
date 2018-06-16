@@ -6,8 +6,10 @@ submodule_init:
 
 install_pyenv:
 	git clone https://github.com/pyenv/pyenv.git $(HOME)/.pyenv
+	git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 
-install_nvm:
+install_nvm: 
+	mkdir $(HOME)/.nvm
 	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
 deploy_prezto: submodule_init deploy_dotfiles
