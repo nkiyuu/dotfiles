@@ -7,18 +7,17 @@ submodule_init:
 deploy_prezto: submodule_init deploy_dotfiles
 	cd $(HOME_PREZTO_RUNCOMS); \
 	for rcfile in *; do \
-		[[ $$rcfile = "README.md" ]] && continue; \
-		[[ $$rcfile = "zshrc" ]] && continue; \
+		if [ $$rcfile = "README.md"]; then continue; fi;\
+		if [ $$rcfile = "zshrc" ]; then continue; fi;\
 		ln -isnv $(HOME_PREZTO_RUNCOMS)/$$rcfile $(HOME)/.$$rcfile; \
 	done
 
 deploy_dotfiles: 
 	-for f in .*; do \
-		[[ $$f = "." ]] && continue; \
-		[[ $$f = ".." ]] && continue; \
-		[[ $$f = ".gitignore" ]] && continue; \
-		[[ $$f = ".gitignore" ]] && continue; \
-		[[ $$f = ".gitmodules" ]] && continue; \
+		if [ $$f =  "." ]; then continue; fi;\
+		if [ $$f = ".." ]; then continue; fi;\
+		if [ $$f = ".gitignore" ]; then continue; fi;\
+		if [ $$f = ".gitmodules" ]; then continue; fi;\
 		ln -isnv $(DOT_DIRECTORY)/$$f $(HOME)/$$f; \
 	done
 	@echo $$(tput setaf 2)Deploy dotfiles complete!. ✔︎$$(tput sgr0)
