@@ -41,7 +41,8 @@ export TMUX_TMPDIR=/tmp
 if [ -f '/Users/y-nozaki/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/y-nozaki/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/y-nozaki/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/y-nozaki/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
+# composer0
+export PATH=$HOME/.composer/vendor/bin:$PATH
 # alias
 # clでターミナルクリア
 alias cl='clear'
