@@ -12,7 +12,7 @@ fi
 
 # Customize to your needs...
 
-# 各環境のセッティング 
+# setting for each language 
 # golang
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
@@ -38,22 +38,25 @@ export PATH=$PATH:$HOME/.cargo/bin
 export TMUX_TMPDIR=/tmp
 # Google Cloud SDK
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/y-nozaki/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/y-nozaki/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/y-nozaki/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/y-nozaki/google-cloud-sdk/path.zsh.inc'; fi
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/y-nozaki/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/y-nozaki/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/y-nozaki/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/y-nozaki/google-cloud-sdk/completion.zsh.inc'; fi
+# goapp
+export PATH=$PATH:$HOME/google-cloud-sdk/platform/google_appengine/goroot-1.9/bin
 # composer0
-export PATH=$HOME/.composer/vendor/bin:$PATH
+export PATH=$PATH:$HOME/.composer/vendor/bin
+
 # alias
-# clでターミナルクリア
+# cl terminal clear
 alias cl='clear'
-# gコマンドでpecoを使ってローカルリポジトリに移動
+# g move to local repository by peco
 alias g='cd $(ghq root)/$(ghq list | peco)'
-# hgコマンドでリモートリポジトリに移動
+# hg move to remote repository by peco
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
-# その他
-# peco用
-# [ ctrl + ] ]でcdできる
+# others
+# for peco
+# [ ctrl + ] ] cd
 function peco-src () {  
   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")  
   if [ -n "$selected_dir" ]; then    
@@ -64,16 +67,14 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
-# Ctrl+r でコマンド履歴
+# Ctrl+r command history
 function peco-select-history() {
-  # historyを番号なし、逆順、最初から表示。
-  # 順番を保持して重複を削除。
-  # カーソルの左側の文字列をクエリにしてpecoを起動
-  # \nを改行に変換
   BUFFER="$(history -nr 1 | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/\n/')"
-  CURSOR=$#BUFFER             # カーソルを文末に移動
-  zle -R -c                   # refresh
+  CURSOR=$#BUFFER             
+  zle -R -c                   
 }
 zle -N peco-select-history
 bindkey '^R' peco-select-history
+
+
 
