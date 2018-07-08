@@ -24,6 +24,7 @@ deploy_dotfiles:
 	-for f in .*; do \
 		if [ $$f =  "." ]; then continue; fi;\
 		if [ $$f = ".." ]; then continue; fi;\
+		if [ $$f = ".git" ]; then continue; fi;\
 		if [ $$f = ".gitignore" ]; then continue; fi;\
 		if [ $$f = ".gitmodules" ]; then continue; fi;\
 		ln -isnv $(DOT_DIRECTORY)/$$f $(HOME)/$$f; \
