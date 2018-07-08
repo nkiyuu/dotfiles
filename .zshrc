@@ -32,6 +32,8 @@ fi
 # android
 export PATH=$HOME/Library/Android/sdk/tools:$PATH
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
+export PATH=$HOME/Android/sdk/tools:$PATH
+export PATH=$HOME/Android/sdk/platform-tools:$PATH
 # rust 
 export PATH=$PATH:$HOME/.cargo/bin
 # tmux
