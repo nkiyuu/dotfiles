@@ -1,1 +1,1 @@
-hogehoge
+nkiyuu のdotfiles です
