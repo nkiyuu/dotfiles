@@ -1,28 +1,28 @@
 [ghq]
-	root = ~/go/src
+  root = ~/go/src
 [user]
-	name = Yuki Nozaki
-	email = nq127main@gmail.com
+  name = Yuki Nozaki
+  email = yuki_nozaki@voyagegroup.com
 [core]
-	excludesfile = ~/.gitignore_global
-	editor = vim -c \"set fenc=utf-8\"
+  excludesfile = ~/.gitignore_global
+  editor = vim -c \"set fenc=utf-8\"
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 [commit]
-    #template = ~/.stCommitMsg
+  #template = ~/.stCommitMsg
 [alias]
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   co = checkout
 
 [url "https://"]
-	insteadOf = git://
+  insteadOf = git://
 
 [core]
   excludesfile = ~/.gitignore_global
 [gc]
-	auto = 0
+  auto = 0

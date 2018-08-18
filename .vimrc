@@ -14,6 +14,10 @@ set autoread
 set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
+" incsearch を有効にする
+set incsearch
+" 検索結果をハイライトする
+set hlsearch
 
 
 " 見た目系
@@ -52,6 +56,11 @@ set backspace=2
 set clipboard+=unnamed
 " ctrl+p でヤンクしたのをペーストするようにする
 vnoremap <silent> <C-p> "0p<CR>
+" bNext をctrl+h に割り当てる
+noremap <C-h> :bprevious<CR>
+" bpreviouse をctrl+l に割り当てる
+noremap <C-l> :bnext<CR>
+
 
 " dein の設定
 if &compatible
