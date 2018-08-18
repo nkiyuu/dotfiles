@@ -1,8 +1,14 @@
 DOT_DIRECTORY = $(shell pwd)
 HOME_PREZTO_RUNCOMS = $(HOME)/.zprezto/runcoms
+DEIN_DIR = $(HOME)/.cache/dein
 
 submodule_init:
 	git submodule update --recursive --init
+
+$(DEIN_DIR):
+	curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+	sh ./installer.sh $(DEIN_DIR)
+	rm -f installer.sh
 
 $(HOME)/.pyenv:
 	git clone https://github.com/pyenv/pyenv.git $(HOME)/.pyenv
@@ -31,4 +37,4 @@ deploy_dotfiles:
 	done
 	@echo $$(tput setaf 2)Deploy dotfiles complete!. ✔︎$$(tput sgr0)
 
-deploy: deploy_prezto $(HOME)/.pyenv $(HOME)/.nvm
+deploy: deploy_prezto $(HOME)/.pyenv $(HOME)/.nvm $(DEIN_DIR)
