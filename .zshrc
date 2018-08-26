@@ -78,8 +78,4 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^R' peco-select-history
-
-
-
-
-
+export PATH="/usr/local/opt/gettext/bin:$PATH"

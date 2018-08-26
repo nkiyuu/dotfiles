@@ -1,11 +1,7 @@
-# python plugins
 [[plugins]]
 repo = 'lambdalisue/vim-pyenv'
-depends = [
-  'jedi-vim',
-]
-on_ft = ['python']
-hook_ad = '''
+depends = ['davidhalter/jedi-vim']
+hook_add = '''
   function! s:jedi_auto_force_py_version() abort
 	let g:jedi#force_py_version = pyenv#python#get_internal_major_version()
   endfunction
@@ -15,8 +11,21 @@ hook_ad = '''
 	autocmd User vim-pyenv-deactivate-post call s:jedi_auto_force_py_version()
   augroup END
 '''
+on_ft = ['python']
 
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = ['python']
 
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
+
+[[plugins]]
+repo = 'zchee/deoplete-go'
+build = 'make'
+on_ft = 'go'
+depends = ['deoplete.nvim']
+hook_source = '''
+    let g:deoplete#sources#go#gocode_binary = $GOPATH . '/bin/gocode'
+'''

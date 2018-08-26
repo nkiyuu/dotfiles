@@ -1,5 +1,9 @@
 " 基本的なsetting を書きます 
 
+" 必要なpathを定義します
+let s:dein_dir = expand('~/.cache/dein')
+let s:toml_dir = expand('~/dotfiles/dein')
+
 "文字コードをUFT-8に設定
 set fenc=utf-8
 set encoding=utf-8
@@ -38,10 +42,6 @@ set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
-" molokaiのテーマを使う
-syntax on
-colorscheme molokai
-set t_Co=256
 
 " Tab系
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
@@ -68,9 +68,6 @@ if &compatible
 endif
 " Add the dein installation directory into runtimepath
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-
-let s:dein_dir = expand('~/.cache/dein')
-let s:toml_dir = expand('~/dotfiles/dein')
 
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
