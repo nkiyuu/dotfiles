@@ -58,6 +58,8 @@ alias cl='clear'
 alias g='cd $(ghq root)/$(ghq list | peco)'
 # hg move to remote repository by peco
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
+# vim to nvim
+alias vim='nvim'
 
 # others
 # for peco
