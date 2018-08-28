@@ -39,6 +39,9 @@ set showmatch
 set laststatus=2
 " コマンドラインの補完
 set wildmode=list:longest
+" 不可視文字を表示
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk

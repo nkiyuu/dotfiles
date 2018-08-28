@@ -5,7 +5,7 @@
   email = yuki_nozaki@voyagegroup.com
 [core]
   excludesfile = ~/.gitignore_global
-  editor = vim -c \"set fenc=utf-8\"
+  editor = nvim -c \"set fenc=utf-8\"
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path = 
