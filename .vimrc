@@ -63,6 +63,8 @@ vnoremap <silent> <C-p> "0p<CR>
 noremap <C-h> :bprevious<CR>
 " bpreviouse をctrl+l に割り当てる
 noremap <C-l> :bnext<CR>
+" <ESC><ESC>でハイライトを削除
+noremap <ESC><ESC> :nohlsearch<CR>
 
 
 " dein の設定
