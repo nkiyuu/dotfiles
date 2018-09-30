@@ -19,9 +19,11 @@ $(HOME)/.nvm:
 $(HOME)/.zprezto:
 	git clone --recursive https://github.com/sorin-ionescu/prezto.git $(HOME)/.zprezto
 
-$(HOME)/.%:
-	ln -s $(DOT_DIRECTORY)/$(shell basename $@) $@ || ln -s $(ZPREZTO_RUNCOMS)/$(shell basename $@) $@
+$(HOME)/.zpreztorc: $(HOME)/.zprezto
+	ln -s $(ZPREZTO_RUNCOMS)/$(shell basename $@) $@
 
-deploy_dotfiles: $(HOME)/.pyenv $(HOME)/.nvm $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.vimrc $(HOME)/.zshrc $(HOME)/.zprezto $(HOME)/.zpreztorc
+$(HOME)/.%:
+	ln -s $(DOT_DIRECTORY)/$(shell basename $@) $@ || 
+deploy_dotfiles: $(HOME)/.pyenv $(HOME)/.nvm $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.vimrc $(HOME)/.zshrc $(HOME)/.zpreztorc
 
 deploy: $(DEIN_DIR) deploy_dotfiles
