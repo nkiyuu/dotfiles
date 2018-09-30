@@ -3,7 +3,7 @@ ZPREZTO_RUNCOMS = $(DOT_DIRECTORY)/.zprezto/runcoms
 DEIN_DIR = $(HOME)/.cache/dein
 
 $(DEIN_DIR):
-	mkdir -p $(DEIN_DIR)
+	mkdir $(DEIN_DIR)
 	curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 	sh ./installer.sh $(DEIN_DIR)
 	rm -f installer.sh
@@ -20,8 +20,7 @@ $(HOME)/.zprezto:
 	git clone --recursive https://github.com/sorin-ionescu/prezto.git $(HOME)/.zprezto
 
 $(HOME)/.%:
-	ln -s $(DOT_DIRECTORY)/$(shell basename $@) $@ || ln -s $(ZPREZTO_RUNCOMS
-	)/$(shell basename $@) $@
+	ln -s $(DOT_DIRECTORY)/$(shell basename $@) $@ || ln -s $(ZPREZTO_RUNCOMS)/$(shell basename $@) $@
 
 deploy_dotfiles: $(HOME)/.pyenv $(HOME)/.nvm $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.vimrc $(HOME)/.zshrc $(HOME)/.zprezto $(HOME)/.zpreztorc
 
