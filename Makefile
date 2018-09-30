@@ -1,5 +1,5 @@
 DOT_DIRECTORY = $(shell pwd)
-ZPREZTO_RUNCOMS = $(DOT_DIRECTORY)/.zprezto/runcoms
+ZPREZTO_RUNCOMS = $(HOME)/.zprezto/runcoms
 DEIN_DIR = $(HOME)/.cache/dein
 
 $(DEIN_DIR):
