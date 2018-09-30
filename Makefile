@@ -20,7 +20,7 @@ $(HOME)/.zprezto:
 	git clone --recursive https://github.com/sorin-ionescu/prezto.git $(HOME)/.zprezto
 
 $(HOME)/.zpreztorc: $(HOME)/.zprezto
-	ln -s $(ZPREZTO_RUNCOMS)/$(shell basename $@) $@
+	ln -s $(ZPREZTO_RUNCOMS)/zpreztorc $(HOME)/.zpreztorc
 
 $(HOME)/.%:
 	ln -s $(DOT_DIRECTORY)/$(shell basename $@) $@ 
