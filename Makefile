@@ -23,7 +23,8 @@ $(HOME)/.zpreztorc: $(HOME)/.zprezto
 	ln -s $(ZPREZTO_RUNCOMS)/$(shell basename $@) $@
 
 $(HOME)/.%:
-	ln -s $(DOT_DIRECTORY)/$(shell basename $@) $@ || 
+	ln -s $(DOT_DIRECTORY)/$(shell basename $@) $@ 
+
 deploy_dotfiles: $(HOME)/.pyenv $(HOME)/.nvm $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.vimrc $(HOME)/.zshrc $(HOME)/.zpreztorc
 
 deploy: $(DEIN_DIR) deploy_dotfiles
