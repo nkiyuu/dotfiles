@@ -17,6 +17,9 @@ fi
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 export PATH=$PATH:/usr/lib/go-1.8/bin
+# goenv
+export PATH="$PATH:$HOME/.goenv/bin"
+eval "$(goenv init -)"
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"

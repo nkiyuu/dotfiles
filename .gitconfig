@@ -24,5 +24,7 @@
 
 [core]
   excludesfile = ~/.gitignore_global
+	pager = LESSCHARSET=utf-8 less
+	quotepath = false
 [gc]
   auto = 0
