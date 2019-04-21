@@ -66,6 +66,10 @@ noremap <C-l> :bnext<CR>
 " <ESC><ESC>でハイライトを削除
 noremap <ESC><ESC> :nohlsearch<CR>
 
+" vim が使う python のバージョンを固定
+let g:python_host_prog = expand('~/.pyenv/versions/vim/bin/python')
+let g:python3_host_prog = expand('~/.pyenv/versions/vim/bin/python3')
+
 
 " dein の設定
 if &compatible
