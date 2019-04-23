@@ -16,16 +16,13 @@ hook_add = '''
 repo = 'prabirshrestha/async.vim'
 
 [[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+
+[[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = '''
-  let g:deoplete#enable_at_startup = 1
-'''
 
 [[plugins]]
 repo = 'neomake/neomake'
@@ -51,3 +48,6 @@ hook_add = '''
   nmap <C-_> <Plug>(caw:hatpos:toggle)
   vmap <C-_> <Plug>(caw:hatpos:toggle)
 '''
+
+[[plugins]]
+repo = 'cespare/vim-toml'
