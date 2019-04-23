@@ -7,6 +7,12 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+let g:deoplete#enable_at_startup = 1
+'''
+
+[[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
   let g:airline#extensions#tabline#enabled = 1
@@ -20,13 +26,11 @@ repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('~/vim-lsp.log')
+set completeopt+=preview
 '''
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
-
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete-lsp.vim'
 
 [[plugins]]
 repo = 'neomake/neomake'
@@ -55,9 +59,3 @@ hook_add = '''
 
 [[plugins]]
 repo = 'cespare/vim-toml'
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = '''
-let g:deoplete#enable_at_startup = 1
-'''
