@@ -7,12 +7,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = '''
-let g:deoplete#enable_at_startup = 1
-'''
-
-[[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
   let g:airline#extensions#tabline#enabled = 1
@@ -27,6 +21,7 @@ hook_add = '''
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('~/vim-lsp.log')
 set completeopt+=preview
+let g:lsp_signs_enabled = 1
 '''
 
 [[plugins]]
@@ -38,6 +33,9 @@ hook_add = '''
   call g:neomake#configure#automake('w')
   let g:neomake_open_list = 2
 '''
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
 
 [[plugins]]
 repo = 'posva/vim-vue'

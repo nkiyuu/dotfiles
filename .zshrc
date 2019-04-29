@@ -32,11 +32,15 @@ export NVM_DIR="$HOME/.nvm"
 if [[ -s ~/.nvm/nvm.sh ]];
   then source ~/.nvm/nvm.sh
 fi
+# java
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 # android
 export PATH=$HOME/Library/Android/sdk/tools:$PATH
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 export PATH=$HOME/Android/sdk/tools:$PATH
 export PATH=$HOME/Android/sdk/platform-tools:$PATH
+# gradle
+export PATH=/Applications/Android\ Studio.app/Contents/gradle/gradle-4.6/bin:$PATH
 # rust 
 export PATH=$PATH:$HOME/.cargo/bin
 # tmux
