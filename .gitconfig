@@ -3,9 +3,12 @@
 [user]
   name = Yuki Nozaki
   email = yuki_nozaki@voyagegroup.com
+[color]
+  ui = auto
 [core]
   excludesfile = ~/.gitignore_global
   editor = nvim -c \"set fenc=utf-8\"
+  pager = less -r
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path = 
@@ -28,3 +31,4 @@
 	quotepath = false
 [gc]
   auto = 0
+

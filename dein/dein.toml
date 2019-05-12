@@ -1,3 +1,4 @@
+# 左側のツリー表示
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
@@ -6,40 +7,44 @@ hook_add = '''
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 '''
 
+# ステータスバーをリッチにする
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
   let g:airline#extensions#tabline#enabled = 1
 '''
 
+# 補完周り
 [[plugins]]
-repo = 'prabirshrestha/async.vim'
-
-[[plugins]]
-repo = 'prabirshrestha/vim-lsp'
+repo = 'Shougo/deoplete.nvim'
 hook_add = '''
-let g:lsp_log_verbose = 1
-let g:lsp_log_file = expand('~/vim-lsp.log')
-set completeopt+=preview
-let g:lsp_signs_enabled = 1
+  let g:deoplete#enable_at_startup = 1
 '''
 
+# vim lsp のクライアント
 [[plugins]]
-repo = 'prabirshrestha/asyncomplete.vim'
-
-[[plugins]]
-repo = 'neomake/neomake'
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
 hook_add = '''
-  call g:neomake#configure#automake('w')
-  let g:neomake_open_list = 2
+  set hidden
+  filetype plugin indent on
+  let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['typescript-language-server --stdio'],
+    \ 'javascript.jsx': ['typescript-language-server --stdio'],
+	\ 'typescript' : ['typescript-language-server --stdio'],
+	\ 'typescript.tsx': ['typescript-language-server --stdio'],
+	\ 'vue' : ['vls'],
+	\ 'go': ['go-langserver','-gocodecompletion=true','-format-tool=gofmt','-lint-tool=golint'],
+    \ }
+  let g:LanguageClient_autoStart = 1
+
+  nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+  nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+  nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 '''
 
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-
-[[plugins]]
-repo = 'posva/vim-vue'
-
+# molokai のテーマ
 [[plugins]]
 repo = 'tomasr/molokai'
 hook_add = '''
@@ -48,6 +53,7 @@ hook_add = '''
   set t_Co=256
 '''
 
+# コメントをいい感じにできる
 [[plugins]]
 repo = 'tyru/caw.vim'
 hook_add = '''
@@ -55,8 +61,14 @@ hook_add = '''
   vmap <C-_> <Plug>(caw:hatpos:toggle)
 '''
 
-[[plugins]]
-repo = 'cespare/vim-toml'
-
+# Git 周りをいい感じに
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+# 言語ごとのプラグイン
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+[[plugins]]
+repo = 'posva/vim-vue'
+[[plugins]]
+repo = 'cespare/vim-toml'

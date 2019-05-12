@@ -1,12 +1,4 @@
 [[plugins]]
-repo = 'davidhalter/jedi-vim'
-on_ft = ['python']
-
-[[plugins]]
-repo = 'fatih/vim-go'
-on_ft = ['go']
-
-[[plugins]]
 repo = 'plasticboy/vim-markdown'
 oplasticboy/vim-markdownn_ft = 'markdown'
 
@@ -17,31 +9,4 @@ on_ft = 'markdown'
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
 on_ft = 'markdown'
-
-[[plugins]]
-repo = 'ryanolsonx/vim-lsp-javascript'
-on_ft = 'javascript'
-hook_source = '''
-if executable('typescript-language-server')
-  au User lsp_setup call lsp#register_server({
-	\ 'name': 'javascript support using typescript-language-server',
-	\ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-	\ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'package.json'))},
-	\ 'whitelist': ['javascript', 'javascript.jsx'],
-	\ })
-endif
-'''
-
-[[plugis]]
-repo = 'ryanolsonx/vim-lsp-typescript'
-hook_source = '''
-if executable('typescript-language-server')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'typescript-language-server',
-        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
-        \ 'whitelist': ['typescript', 'typescript.tsx'],
-        \ })
-endif
-'''
 

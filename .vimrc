@@ -98,29 +98,3 @@ endif
 filetype plugin indent on
 syntax enable
 
-" vue の lsp 設定
-if executable('vls')
-	au User lsp_setup call lsp#register_server({
-	  \ 'name': 'vue-language-server',
-	  \ 'cmd': {server_info->['vls']},
-	  \ 'whitelist': ['vue'],
-	  \ 'initialization_options': {
-	  \         'config': {
-	  \             'html': {},
-	  \              'vetur': {
-	  \                  'validation': {}
-	  \              }
-	  \         }
-	  \     }
-	  \ })
-endif
-
-" go の lsp 設定
-if executable('go-langserver')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'go-langserver',
-        \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
-        \ 'whitelist': ['go'],
-        \ })
-endif
-
