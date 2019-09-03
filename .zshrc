@@ -39,7 +39,8 @@ export PATH=$HOME/Library/Android/sdk/tools:$PATH
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 export PATH=$HOME/Android/sdk/tools:$PATH
 export PATH=$HOME/Android/sdk/platform-tools:$PATH
-export ANDROID_HOME=$HOME/Library/Android/sdk/
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 # gradle
 export PATH=/Applications/Android\ Studio.app/Contents/gradle/gradle-4.6/bin:$PATH
 # rust 
