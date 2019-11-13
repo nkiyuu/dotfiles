@@ -69,6 +69,10 @@ alias g='cd $(ghq root)/$(ghq list | peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 # vim to nvim
 alias vim='nvim'
+## git
+# git checkout
+alias gco="git checkout"
+alias gcb='gco $(git for-each-ref --format="%(authorname) %09 %(refname:short)" --sort=authorname | sed "/origin/d" | peco | awk "{print \$NF}")'
 
 # others
 # for peco

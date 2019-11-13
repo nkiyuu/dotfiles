@@ -21,29 +21,6 @@ hook_add = '''
   let g:deoplete#enable_at_startup = 1
 '''
 
-# vim lsp のクライアント
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'next'
-build = 'bash install.sh'
-hook_add = '''
-  set hidden
-  filetype plugin indent on
-  let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['typescript-language-server --stdio'],
-    \ 'javascript.jsx': ['typescript-language-server --stdio'],
-	\ 'typescript' : ['typescript-language-server --stdio'],
-	\ 'typescript.tsx': ['typescript-language-server --stdio'],
-	\ 'vue' : ['vls'],
-	\ 'go': ['go-langserver','-gocodecompletion=true','-format-tool=gofmt','-lint-tool=golint'],
-    \ }
-  let g:LanguageClient_autoStart = 1
-
-  nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-  nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-  nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-'''
-
 # molokai のテーマ
 [[plugins]]
 repo = 'tomasr/molokai'
@@ -65,10 +42,3 @@ hook_add = '''
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
-# 言語ごとのプラグイン
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-[[plugins]]
-repo = 'posva/vim-vue'
-[[plugins]]
-repo = 'cespare/vim-toml'

@@ -1,3 +1,19 @@
+# Golang
+[[plugins]] # goコマンド補完
+repo = 'fatih/vim-go'
+on_ft = 'go'
+
+
+[[plugins]] # vim-go代替
+repo = 'zchee/nvim-go'
+build = 'make'
+on_ft = 'go'
+
+[[plugins]] # コード補完（Golang用）
+repo = 'zchee/deoplete-go'
+on_ft = 'go'
+
+# Markdown
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
 oplasticboy/vim-markdownn_ft = 'markdown'
