@@ -12,7 +12,7 @@ fi
 
 # Customize to your needs...
 
-# setting for each language 
+# setting for each language
 # golang
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
@@ -32,6 +32,9 @@ export NVM_DIR="$HOME/.nvm"
 if [[ -s ~/.nvm/nvm.sh ]];
   then source ~/.nvm/nvm.sh
 fi
+#rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 # java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 # android
@@ -43,7 +46,7 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 # gradle
 export PATH=/Applications/Android\ Studio.app/Contents/gradle/gradle-4.6/bin:$PATH
-# rust 
+# rust
 export PATH=$PATH:$HOME/.cargo/bin
 # tmux
 export TMUX_TMPDIR=/tmp
@@ -77,12 +80,12 @@ alias gcb='gco $(git for-each-ref --format="%(authorname) %09 %(refname:short)" 
 # others
 # for peco
 # [ ctrl + ] ] cd
-function peco-src () {  
-  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")  
-  if [ -n "$selected_dir" ]; then    
-    BUFFER="cd ${selected_dir}"    
-    zle accept-line  
-  fi  
+function peco-src () {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
   zle clear-screen
 }
 zle -N peco-src
@@ -90,8 +93,8 @@ bindkey '^]' peco-src
 # Ctrl+r command history
 function peco-select-history() {
   BUFFER="$(history -nr 1 | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/\n/')"
-  CURSOR=$#BUFFER             
-  zle -R -c                   
+  CURSOR=$#BUFFER
+  zle -R -c
 }
 zle -N peco-select-history
 bindkey '^R' peco-select-history
