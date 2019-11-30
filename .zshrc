@@ -20,6 +20,7 @@ export PATH=$PATH:/usr/lib/go-1.8/bin
 # goenv
 export PATH="$PATH:$HOME/.goenv/bin"
 eval "$(goenv init -)"
+export GOENV_DISABLE_GOPATH
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -36,7 +37,7 @@ fi
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 # java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 # android
 export PATH=$HOME/Library/Android/sdk/tools:$PATH
 export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH

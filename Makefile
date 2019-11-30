@@ -26,9 +26,12 @@ $(HOME)/.rbenv:
 	git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 	git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
+@(HOME)/.goenv:
+	git clone https://github.com/syndbg/goenv.git ~/.goenv
+
 $(HOME)/.%:
 	ln -s $(DOT_DIRECTORY)/$(shell basename $@) $@
 
-deploy_dotfiles: $(HOME)/.pyenv $(HOME)/.nvm $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.vimrc $(HOME)/.zshrc $(HOME)/.zpreztorc $(HOME)/.rbenv
+deploy_dotfiles: $(HOME)/.pyenv $(HOME)/.nvm $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.vimrc $(HOME)/.zshrc $(HOME)/.zpreztorc $(HOME)/.rbenv $(HOME)/.goenv
 
 deploy: $(DEIN_DIR) deploy_dotfiles
