@@ -20,7 +20,7 @@ export PATH=$PATH:/usr/lib/go-1.8/bin
 # goenv
 export PATH="$PATH:$HOME/.goenv/bin"
 eval "$(goenv init -)"
-export GOENV_DISABLE_GOPATH
+export GOENV_DISABLE_GOPATH=1
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
