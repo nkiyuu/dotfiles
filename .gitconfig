@@ -32,3 +32,10 @@
 [gc]
   auto = 0
 
+[http]
+	cookiefile = /Users/y-nozaki/.gitcookies
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

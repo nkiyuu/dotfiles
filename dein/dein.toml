@@ -1,3 +1,46 @@
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+# 補完
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+  let g:deoplete#enable_at_startup = 1
+'''
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+
+# lsp
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
+hook_add = '''
+set hidden
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = {}
+
+if executable('pyls')
+  let g:LanguageClient_serverCommands['python'] = ['pyls']
+endif
+if executable('vls')
+  let g:LanguageClient_serverCommands['vue'] = ['vls']
+endif
+if executable('gopls')
+  let g:LanguageClient_serverCommands['go'] = ['gopls']
+endif
+if executable('typescript-language-server')
+  let g:LanguageClient_serverCommands['javascript'] = ['typescript-language-server', '--stdio']
+  let g:LanguageClient_serverCommands['typescript'] = ['typescript-language-server', '--stdio']
+endif
+'''
+
 # 左側のツリー表示
 [[plugins]]
 repo = 'scrooloose/nerdtree'
@@ -12,13 +55,6 @@ hook_add = '''
 repo = 'vim-airline/vim-airline'
 hook_add = '''
   let g:airline#extensions#tabline#enabled = 1
-'''
-
-# 補完周り
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = '''
-  let g:deoplete#enable_at_startup = 1
 '''
 
 # molokai のテーマ
@@ -41,4 +77,5 @@ hook_add = '''
 # Git 周りをいい感じに
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
 
