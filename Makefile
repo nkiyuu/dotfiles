@@ -16,7 +16,7 @@ $(HOME)/.nvm:
 	mkdir $(HOME)/.nvm
 	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
-$(HOME)/.goenv
+$(HOME)/.goenv:
 	git clone https://github.com/syndbg/goenv.git $(HOME)/.goenv
 
 $(HOME)/.zprezto:
