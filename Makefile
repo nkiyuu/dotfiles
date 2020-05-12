@@ -16,6 +16,9 @@ $(HOME)/.nvm:
 	mkdir $(HOME)/.nvm
 	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
+$(HOME)/.goenv
+	git clone https://github.com/syndbg/goenv.git $(HOME)/.goenv
+
 $(HOME)/.zprezto:
 	git clone --recursive https://github.com/sorin-ionescu/prezto.git $(HOME)/.zprezto
 
@@ -32,6 +35,6 @@ $(HOME)/.rbenv:
 $(HOME)/.%:
 	ln -s $(DOT_DIRECTORY)/$(shell basename $@) $@
 
-deploy_dotfiles: $(HOME)/.pyenv $(HOME)/.nvm $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.vimrc $(HOME)/.zshrc $(HOME)/.zpreztorc $(HOME)/.rbenv $(HOME)/.goenv $(HOME)/.vim
+deploy_dotfiles: $(HOME)/.pyenv $(HOME)/.nvm $(HOME)/.goenv $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.vimrc $(HOME)/.zshrc $(HOME)/.zpreztorc $(HOME)/.rbenv $(HOME)/.goenv $(HOME)/.vim
 
 deploy: $(DEIN_DIR) deploy_dotfiles
