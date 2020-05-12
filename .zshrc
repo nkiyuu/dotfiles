@@ -63,6 +63,8 @@ if [ -f '/Users/kiyuu/google-cloud-sdk/completion.zsh.inc' ]; then source '/User
 export PATH=$PATH:$HOME/google-cloud-sdk/platform/google_appengine/goroot-1.9/bin
 # composer0
 export PATH=$PATH:$HOME/.composer/vendor/bin
+# Language Server Protocol
+PATH=$PATH:$HOME/.local/share/vim-lsp-settings/servers/typescript-language-server
 
 # alias
 # cl terminal clear
@@ -71,12 +73,11 @@ alias cl='clear'
 alias g='cd $(ghq root)/$(ghq list | peco)'
 # hg move to remote repository by peco
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
-# vim to nvim
-alias vim='nvim'
 ## git
 # git checkout
 alias gco="git checkout"
 alias gcb='gco $(git for-each-ref --format="%(authorname) %09 %(refname:short)" --sort=authorname | sed "/origin/d" | peco | awk "{print \$NF}")'
+alias vim="nvim"
 
 # others
 # for peco

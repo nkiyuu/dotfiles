@@ -1,100 +1,72 @@
-" 基本的なsetting を書きます 
+syntax enable
+syntax on " シンタックスハイライトを有効化
+let mapleader="\<space>" " Leader キーをスペースに変更
 
-" 必要なpathを定義します
-let s:dein_dir = expand('~/.cache/dein')
-let s:toml_dir = expand('~/dotfiles/dein')
-
-"文字コードをUFT-8に設定
-set fenc=utf-8
-set encoding=utf-8
-set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
-" バックアップファイルを作らない
-set nobackup
-" スワップファイルを作らない
-set noswapfile
-" 編集中のファイルが変更されたら自動で読み直す
-set autoread
-" バッファが編集中でもその他のファイルを開けるように
-set hidden
-" 入力中のコマンドをステータスに表示する
-set showcmd
-" incsearch を有効にする
-set incsearch
-" 検索結果をハイライトする
-set hlsearch
-
-
-" 見た目系
-" 行番号を表示
-set number
-" 現在の行を強調表示
-set cursorline
-" 行末の1文字先までカーソルを移動できるように
-set virtualedit=onemore
-" 新しい行を開始した時に，新しい行のインデントと同じにする
-set autoindent
-" 括弧入力時の対応する括弧を表示
-set showmatch
-" ステータスラインを常に表示
-set laststatus=2
-" コマンドラインの補完
-set wildmode=list:longest
-" 不可視文字を表示
-set list
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
-" 折り返し時に表示行単位での移動できるようにする
-nnoremap j gj
-nnoremap k gk
-
-" Tab系
-" 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=4
-" 行頭でのTab文字の表示幅
-set shiftwidth=2
-
-" 操作系
-" backspace で改行を消せるようにする
-set backspace=2
-" clipboard 連携
-set clipboard+=unnamed
-" ctrl+p でヤンクしたのをペーストするようにする
-vnoremap <silent> <C-p> "0p<CR>
-" bNext をctrl+h に割り当てる
-noremap <C-h> :bprevious<CR>
-" bpreviouse をctrl+l に割り当てる
-noremap <C-l> :bnext<CR>
-" <ESC><ESC>でハイライトを削除
-noremap <ESC><ESC> :nohlsearch<CR>
-
-" vim が使う python のバージョンを固定
-let g:python_host_prog = expand('~/.pyenv/versions/vim/bin/python')
-let g:python3_host_prog = expand('~/.pyenv/versions/vim/bin/python3')
-
-
-" dein の設定
 if &compatible
-  set nocompatible
+  set nocompatible               " Be iMproved
 endif
-" Add the dein installation directory into runtimepath
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
+" Required:
+set runtimepath+=/Users/y-nozaki/.cache/dein/repos/github.com/Shougo/dein.vim
 
-  "Load TOML
-  let s:toml = s:toml_dir . '/dein.toml'
-  let s:lazy_toml = s:toml_dir . '/dein_lazy.toml'
-  call dein#load_toml(s:toml, {'lazy': 0})
-  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+" Required:
+if dein#load_state('/Users/y-nozaki/.cache/dein')
+  call dein#begin('/Users/y-nozaki/.cache/dein')
 
-  if dein#check_install()
-	call dein#install()
-  endif
+  " Let dein manage dein
+  " Required:
+  call dein#add('/Users/y-nozaki/.cache/dein/repos/github.com/Shougo/dein.vim')
 
+  " Add or remove your plugins here like this:
+  call dein#load_toml('/Users/y-nozaki/.config/nvim/dein.toml', {'lazy': 0})
+  call dein#load_toml('/Users/y-nozaki/.config/nvim/dein_lazy.toml', {'lazy': 1})
+
+  " Required:
   call dein#end()
   call dein#save_state()
 endif
 
+" Required:
 filetype plugin indent on
 syntax enable
 
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+filetype plugin indent on " ファイルタイプに基づいたインデントを有効化
+set autoindent " 新しい行を始めるときに自動でインデント
+set expandtab " タブをスペースに変換
+set tabstop=2 " タブをスペース2文字とカウント
+set shiftwidth=2 " 自動インデントに使われるスペースの数
+set backspace=2 " バックスペースの挙動の問題を修正
+set noswapfile " swap ファイルを作成しない
+set foldmethod=indent " インデントで折りたたむようにする
+set wildmenu " Netrw の wildmenu を有効にする
+set wildmode=list:longest,full " 最長マッチまで保管してから自動補完メニューを開く
+set clipboard=unnamed " システムのクリップボードにデフォルトでコピーする
+set undofile " undofileを設定する
+if !isdirectory(expand("$HOME/.vim/undodir"))
+    call mkdir(expand("$HOME/.vim/undodir"), "p")
+endif
+set undodir=$HOME/.vim/undodir
+set tags=tags; " 親ディレクトリにあるtagsファイルを再起的に探す
+set hlsearch " 検索結果をハイライトする
+set background=dark " dark モードで表示
+set laststatus=2 " statusバーを常時表示
+set number " 行数を表示
+set encoding=utf-8 " vim 内部での文字コードを定義
+set fileencoding=utf-8 " ファイル書き込み時の文字コード
+set fileencodings=utf-8,cp932 " ファイル読み込み時の文字コード
+
+nnoremap <ESC><ESC> :noh<CR> " <ESC>２回で検索ハイライトを消す
+
+autocmd BufRead * normal zR " バッファー読み込み時に zR を実行
+augroup ctags " tags の自動生成
+  autocmd!
+  autocmd BufWritePost * silent !ctags -R -f --links=no .tags
+augroup END
+
+
+colorscheme molokai " カラースキームを変更
