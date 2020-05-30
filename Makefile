@@ -35,6 +35,6 @@ $(HOME)/.rbenv:
 $(HOME)/.%:
 	ln -s $(DOT_DIRECTORY)/$(shell basename $@) $@
 
-deploy_dotfiles: $(HOME)/.pyenv $(HOME)/.nvm $(HOME)/.goenv $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.vimrc $(HOME)/.zshrc $(HOME)/.zpreztorc $(HOME)/.rbenv $(HOME)/.goenv $(HOME)/.vim
+deploy_dotfiles: $(HOME)/.pyenv $(HOME)/.nvm $(HOME)/.goenv $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.vimrc $(HOME)/.zshrc $(HOME)/.zpreztorc $(HOME)/.rbenv $(HOME)/.goenv $(HOME)/.vim $(HOME)/.tmux.conf
 
 deploy: $(DEIN_DIR) deploy_dotfiles

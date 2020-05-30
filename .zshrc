@@ -52,13 +52,9 @@ export PATH=$PATH:$HOME/.cargo/bin
 # tmux
 export TMUX_TMPDIR=/tmp
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/y-nozaki/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/y-nozaki/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "${HOME}/google-cloud-sdk/path.zsh.inc" ]; then source "${HOME}/google-cloud-sdk/path.zsh.inc"; fi
 # Google Cloud SDK# The next line enables shell command completion for gcloud.
-if [ -f '/Users/y-nozaki/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/y-nozaki/google-cloud-sdk/completion.zsh.inc'; fi
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kiyuu/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/kiyuu/google-cloud-sdk/path.zsh.inc'; fi
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/kiyuu/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/kiyuu/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "${HOME}/google-cloud-sdk/completion.zsh.inc" ]; then source "${HOME}/google-cloud-sdk/completion.zsh.inc"; fi
 # goapp
 export PATH=$PATH:$HOME/google-cloud-sdk/platform/google_appengine/goroot-1.9/bin
 # composer0
