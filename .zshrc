@@ -61,6 +61,8 @@ export PATH=$PATH:$HOME/google-cloud-sdk/platform/google_appengine/goroot-1.9/bi
 export PATH=$PATH:$HOME/.composer/vendor/bin
 # Language Server Protocol
 PATH=$PATH:$HOME/.local/share/vim-lsp-settings/servers/typescript-language-server
+# flutter bin
+export PATH=$PATH:$HOME/flutter/bin
 
 # alias
 # cl terminal clear
@@ -72,6 +74,7 @@ alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 ## git
 # git checkout
 alias gco="git checkout"
+alias gsw="git switch"
 alias gcb='gco $(git for-each-ref --format="%(authorname) %09 %(refname:short)" --sort=authorname | sed "/origin/d" | peco | awk "{print \$NF}")'
 alias vim="nvim"
 
@@ -97,3 +100,7 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^R' peco-select-history
 export PATH="/usr/local/opt/gettext/bin:$PATH"
+
+
+# added by travis gem
+[ ! -s /Users/y-nozaki/.travis/travis.sh ] || source /Users/y-nozaki/.travis/travis.sh
