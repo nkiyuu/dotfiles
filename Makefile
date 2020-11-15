@@ -1,6 +1,7 @@
 DOT_DIRECTORY = $(shell pwd)
 ZPREZTO_RUNCOMS = $(HOME)/.zprezto/runcoms
 DEIN_DIR = $(HOME)/.cache/dein
+FISH_DIR = $(HOME)/.config.fish
 
 $(DEIN_DIR):
 	mkdir -p $(DEIN_DIR)
@@ -8,22 +9,18 @@ $(DEIN_DIR):
 	sh ./installer.sh $(DEIN_DIR)
 	rm -f installer.sh
 
+$(FISH_DIR):
+	ln -s $(DOT_DIRECTORY)/fish $(FISH_DIR)
+
+$(HOME)/.nodebrew
+	curl -L git.io/nodebrew | perl - setup
+
 $(HOME)/.pyenv:
 	git clone https://github.com/pyenv/pyenv.git $(HOME)/.pyenv
 	git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 
-$(HOME)/.nvm:
-	mkdir $(HOME)/.nvm
-	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-
 $(HOME)/.goenv:
 	git clone https://github.com/syndbg/goenv.git $(HOME)/.goenv
-
-$(HOME)/.zprezto:
-	git clone --recursive https://github.com/sorin-ionescu/prezto.git $(HOME)/.zprezto
-
-$(HOME)/.zpreztorc: $(HOME)/.zprezto
-	ln -s $(ZPREZTO_RUNCOMS)/zpreztorc $(HOME)/.zpreztorc
 
 $(HOME)/.rbenv:
 	git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
@@ -35,6 +32,6 @@ $(HOME)/.rbenv:
 $(HOME)/.%:
 	ln -s $(DOT_DIRECTORY)/$(shell basename $@) $@
 
-deploy_dotfiles: $(HOME)/.pyenv $(HOME)/.nvm $(HOME)/.goenv $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.vimrc $(HOME)/.zshrc $(HOME)/.zpreztorc $(HOME)/.rbenv $(HOME)/.goenv $(HOME)/.vim $(HOME)/.tmux.conf
+deploy_dotfiles: $(HOME)/.pyenv $(HOME)/.nodebrew $(HOME)/.goenv $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.vimrc $(HOME)/.rbenv $(HOME)/.goenv $(HOME)/.vim 
 
-deploy: $(DEIN_DIR) deploy_dotfiles
+deploy: $(DEIN_DIR) $(FISH_DIR) deploy_dotfiles
