@@ -37,7 +37,7 @@ set -x PATH $PATH $HOME/.local/share/vim-lsp-settings/servers/typescript-languag
 # flutter bin
 set -x PATH $PATH $HOME/flutter/bin
 # Google Cloud SDK.
-if [ -f '$HOME/google-cloud-sdk/path.fish.inc' ]; . '$HOME/google-cloud-sdk/path.fish.inc'; end
+if [ -f $HOME/google-cloud-sdk/path.fish.inc ]; . $HOME/google-cloud-sdk/path.fish.inc; end
 
 # abbr
 # cl terminal clear
