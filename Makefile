@@ -12,7 +12,7 @@ $(DEIN_DIR):
 $(FISH_DIR):
 	ln -s $(DOT_DIRECTORY)/fish $(FISH_DIR)
 
-$(HOME)/.nodebrew
+$(HOME)/.nodebrew:
 	curl -L git.io/nodebrew | perl - setup
 
 $(HOME)/.pyenv:
