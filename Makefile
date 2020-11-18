@@ -1,7 +1,7 @@
 DOT_DIRECTORY = $(shell pwd)
 ZPREZTO_RUNCOMS = $(HOME)/.zprezto/runcoms
 DEIN_DIR = $(HOME)/.cache/dein
-FISH_DIR = $(HOME)/.config.fish
+FISH_DIR = $(HOME)/.config/fish
 
 $(DEIN_DIR):
 	mkdir -p $(DEIN_DIR)
