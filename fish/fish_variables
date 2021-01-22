@@ -7,8 +7,8 @@ SETUVAR _fish_abbr_gco:git\x20checkout
 SETUVAR _fish_abbr_gh:hub\x20browse\x20\x28ghq\x20list\x20\x7c\x20peco\x20\x7c\x20cut\x20\x2dd\x20/\x20\x2df\x202\x2c3\x29
 SETUVAR _fish_abbr_gsw:git\x20switch
 SETUVAR _fish_abbr_vim:nvim
-SETUVAR _fisher_jorgebucaran_2F_fisher_files:/Users/y\x2dnozaki/\x2econfig/fish/functions/fisher\x2efish\x1e/Users/y\x2dnozaki/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_peco_files:/Users/y\x2dnozaki/\x2econfig/fish/functions/peco_kill\x2efish\x1e/Users/y\x2dnozaki/\x2econfig/fish/functions/peco_select_history\x2efish
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/y\x2dnozaki/\x2econfig/fish/functions/fisher\x2efish\x1e/home/y\x2dnozaki/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_peco_files:/home/y\x2dnozaki/\x2econfig/fish/functions/peco_kill\x2efish\x1e/home/y\x2dnozaki/\x2econfig/fish/functions/peco_select_history\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_theme_2D_clearance_files:/home/y\x2dnozaki/\x2econfig/fish/functions/fish_prompt\x2efish
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eoh\x2dmy\x2dfish/plugin\x2dpeco\x1eoh\x2dmy\x2dfish/theme\x2dclearance
 SETUVAR fish_color_autosuggestion:555\x1ebrblack

@@ -28,6 +28,7 @@ set -x ANDROID_HOME $HOME/Library/Android/sdk
 set -x ANDROID_SDK_ROOT $HOME/Library/Android/sdk
 # gradle
 set -x PATH $PATH /Applications/Android\ Studio.app/Contents/gradle/gradle-4.6/bin
+set -x PATH $PATH /opt/gradle/bin
 # rust
 set -x PATH $PATH $HOME/.cargo/bin
 # composer
