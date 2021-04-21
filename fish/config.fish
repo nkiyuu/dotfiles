@@ -39,6 +39,8 @@ set -x PATH $PATH $HOME/.local/share/vim-lsp-settings/servers/typescript-languag
 set -x PATH $PATH $HOME/flutter/bin
 # Google Cloud SDK.
 if [ -f $HOME/google-cloud-sdk/path.fish.inc ]; . $HOME/google-cloud-sdk/path.fish.inc; end
+# goneovim
+set -x PATH $PATH /Applications/goneovim.app/Contents/MacOS
 
 # abbr
 # cl terminal clear
@@ -51,9 +53,11 @@ abbr gh "hub browse (ghq list | peco | cut -d "/" -f 2,3)"
 # git checkout
 abbr gco "git checkout"
 abbr gsw "git switch"
-abbr vim "nvim"
 
 # plugin setting
 function fish_user_key_bindings
   bind \cr peco_select_history # Bind for prco history to Ctrl+r
 end
+# ghcup-env
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
+test -f /Users/y-nozaki/.ghcup/env ; and set -gx PATH $HOME/.cabal/bin /Users/y-nozaki/.ghcup/bin $PATH

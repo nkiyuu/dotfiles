@@ -10,4 +10,5 @@ abbr gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 abbr gco="git checkout"
 abbr gsw="git switch"
 abbr gcb='gco $(git for-each-ref --format="%(authorname) %09 %(refname:short)" --sort=authorname | sed "/origin/d" | peco | awk "{print \$NF}")'
-abbr vim="nvim"
+abbr vim="goneovim"
+abbr gg="git grep --break --heading"
