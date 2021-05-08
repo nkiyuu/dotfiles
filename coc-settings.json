@@ -1,0 +1,26 @@
+{
+  "suggest.noselect": true,
+  "suggest.preferCompleteThanJumpPlaceholder": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "go",
+    "typescript",
+    "javascript",
+    "vue"
+  ],
+  "vetur.format.defaultFormatter.sass": "none",
+  "vetur.format.defaultFormatter.scss": "none",
+  "vetur.format.defaultFormatter.css": "none",
+  "clangd.path": "/Users/y-nozaki/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": [
+        "go.mod"
+      ],
+      "disableWorkspaceFolders": true,
+      "filetypes": [
+        "go"
+      ]
+    }
+  }
+}
