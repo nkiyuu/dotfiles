@@ -13,57 +13,15 @@ repo = 'Shougo/neosnippet.vim'
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
+# lsp 扱えるようにする
 [[plugins]]
-repo = 'pangloss/vim-javascript'
-
-# 左側のツリー表示
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add = '''
-  let g:NERDTreeShowHidden=1
-  map <C-n> :NERDTreeToggle<CR>
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-'''
-
-# lsp
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'next'
-build = 'bash install.sh'
-hook_add = '''
-set hidden
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {}
-
-if executable('pyls')
-  let g:LanguageClient_serverCommands['python'] = ['pyls']
-endif
-if executable('vls')
-  let g:LanguageClient_serverCommands['vue'] = ['vls']
-endif
-if executable('gopls')
-  let g:LanguageClient_serverCommands['go'] = ['gopls']
-endif
-if executable('typescript-language-server')
-  let g:LanguageClient_serverCommands['javascript'] = ['typescript-language-server', '--stdio']
-  let g:LanguageClient_serverCommands['typescript'] = ['typescript-language-server', '--stdio']
-endif
-'''
+repo = 'neoclide/coc.nvim'
 
 # ステータスバーをリッチにする
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
   let g:airline#extensions#tabline#enabled = 1
-'''
-
-# molokai のテーマ
-[[plugins]]
-repo = 'tomasr/molokai'
-hook_add = '''
-  colorscheme molokai
-  syntax on
-  set t_Co=256
 '''
 
 # コメントをいい感じにできる
@@ -77,4 +35,8 @@ hook_add = '''
 # Git 周りをいい感じに
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'sonph/onehalf'
+rtp = 'vim'
 
