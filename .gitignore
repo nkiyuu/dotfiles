@@ -2,6 +2,7 @@
 !.vim/bundle/neobundle.vim
 .vim/plugged/*
 .vim/bundle/.neobundle/*
+.vim/undodir/*
 .golang/*
 .zhistory
 tags
