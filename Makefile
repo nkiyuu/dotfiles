@@ -49,10 +49,12 @@ $(NVIM_DIR)/dein.toml: $(DEIN_DIR)
 $(NVIM_DIR)/dein_lazy.toml: $(DEIN_DIR)
 	ln -sf $(DOT_DIRECTORY)/dein/dein_lazy.toml $@
 
+$(NVIM_DIR)/coc-settings.json: $(NVIM_DIR)
+	ln -sf $(DOT_DIRECTORY)/coc-settings.json $@
 
 $(HOME)/.%:
 	ln -s $(DOT_DIRECTORY)/$(shell basename $@) $@
 
-deploy_dotfiles: $(HOME)/.pyenv $(HOME)/.nodebrew $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.vimrc $(HOME)/.rbenv $(HOME)/.goenv $(HOME)/.vim $(HOME)/.zshrc $(HOME)/.zpreztorc $(NVIM_DIR)/init.vim $(NVIM_DIR)/dein.toml $(NVIM_DIR)/dein_lazy.toml
+deploy_dotfiles: $(HOME)/.pyenv $(HOME)/.nodebrew $(HOME)/.gitconfig $(HOME)/.gitignore_global $(HOME)/.vimrc $(HOME)/.rbenv $(HOME)/.goenv $(HOME)/.vim $(HOME)/.zshrc $(HOME)/.zpreztorc $(NVIM_DIR)/init.vim $(NVIM_DIR)/dein.toml $(NVIM_DIR)/dein_lazy.toml $(NVIM_DIR)/coc-settings.json
 
 deploy: $(DEIN_DIR) $(FISH_DIR) deploy_dotfiles
