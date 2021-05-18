@@ -53,6 +53,8 @@ abbr gh "hub browse (ghq list | peco | cut -d "/" -f 2,3)"
 # git checkout
 abbr gco "git checkout"
 abbr gsw "git switch"
+# git grep
+abbr gg "git grep --break --heading"
 
 # plugin setting
 function fish_user_key_bindings
