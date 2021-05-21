@@ -6,9 +6,10 @@ oplasticboy/vim-markdownn_ft = 'markdown'
 [[plugins]]
 repo = 'previm/previm'
 on_ft = 'markdown'
+hook_add = '''
+  let g:previm_open_cmd = 'open -a Vivaldi'
+'''
 
 [[plugins]]
-repo = 'plasticboy/vim-markdown'
-on_ft = 'markdown'
-
-
+repo = 'dsawardekar/wordpress.vim'
+on_ft = 'php'
