@@ -50,6 +50,8 @@ set undofile " undofileを設定する
 if !isdirectory(expand("$HOME/.vim/undodir"))
     call mkdir(expand("$HOME/.vim/undodir"), "p")
 endif
+set splitbelow
+set splitright
 set undodir=$HOME/.vim/undodir
 set tags=tags; " 親ディレクトリにあるtagsファイルを再起的に探す
 set hlsearch " 検索結果をハイライトする
@@ -63,6 +65,9 @@ set t_Co=256
 lang en_US.UTF-8
 
 nnoremap <ESC><ESC> :noh<CR> " <ESC>２回で検索ハイライトを消す
+
+command Spterm execute "sp | term"
+command Vsterm execute "vs | term"
 
 autocmd BufRead * normal zR " バッファー読み込み時に zR を実行
 augroup ctags " tags の自動生成

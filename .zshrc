@@ -72,11 +72,13 @@ alias g='cd $(ghq root)/$(ghq list | peco)'
 # hg move to remote repository by peco
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 ## git
-# git checkout
 alias gco="git checkout"
 alias gsw="git switch"
 alias gcb='gco $(git for-each-ref --format="%(authorname) %09 %(refname:short)" --sort=authorname | sed "/origin/d" | peco | awk "{print \$NF}")'
+## vim
 alias vim="nvim"
+## for WSL
+alias clip='/mnt/c/Windows/System32/clip.exe'
 
 # others
 # for peco
