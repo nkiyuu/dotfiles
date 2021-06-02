@@ -79,6 +79,8 @@ alias gcb='gco $(git for-each-ref --format="%(authorname) %09 %(refname:short)" 
 alias vim="nvim"
 ## for WSL
 alias clip='/mnt/c/Windows/System32/clip.exe'
+## for stoplight studio
+alias stoplight='stoplight-studio > /dev/null 2>&1 &'
 
 # others
 # for peco
