@@ -69,6 +69,9 @@ nnoremap <ESC><ESC> :noh<CR> " <ESC>２回で検索ハイライトを消す
 command Spterm execute "sp | term"
 command Vsterm execute "vs | term"
 
+" テンプレートのフォルダの場所を教える
+let g:sonictemplate_vim_template_dir = ['$HOME/go/src/github.com/nkiyuu/my-sonic-template']
+
 autocmd BufRead * normal zR " バッファー読み込み時に zR を実行
 augroup ctags " tags の自動生成
   autocmd!

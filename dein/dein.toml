@@ -28,3 +28,8 @@ repo = 'tpope/vim-fugitive'
 repo = 'sonph/onehalf'
 rtp = 'vim'
 
+[[plugins]]
+repo = 'mattn/vim-sonictemplate'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'

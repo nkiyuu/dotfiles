@@ -28,11 +28,6 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-# nvm
-export NVM_DIR="$HOME/.nvm"
-if [[ -s ~/.nvm/nvm.sh ]];
-  then source ~/.nvm/nvm.sh
-fi
 #rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
